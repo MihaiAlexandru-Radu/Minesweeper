@@ -12,7 +12,7 @@ int main() {
 
     Cell cells[Cells::getRows()][Cells::getCols()];
 
-    while(!Cells::isFullyRevealed) {
+    while(!Cells::isFullyRevealed()) {
         for (int row = 0; row < Cells::getRows(); row++) {
             for (int col = 0; col < Cells::getCols(); col++) {
                 std::cout << cells[row][col].getCellSymbol();
@@ -36,5 +36,7 @@ void initCells() {
     Cells::setMineTotal(mineTotal);
 }
 void makeMove() {
-
+    std::cout << "> ";
+    std::string move = "";
+    std::cin >> move;
 }
