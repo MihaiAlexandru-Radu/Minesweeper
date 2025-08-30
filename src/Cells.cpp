@@ -1,7 +1,7 @@
 class Cells 
 {
     public:
-        static void setDimensions(int rows, int cols) {
+        static void setDimensions(int rows = 0, int cols = 0) {
             Cells::rows = rows;
             Cells::cols = cols;
             Cells::cellsRevealed = 0;
@@ -10,17 +10,16 @@ class Cells
             Cells::mineTotal = mineTotal;
         }
         static int getRows() {
-            return rows; 
+            return Cells::rows; 
         }
         static int getCols() {
-            return cols;
+            return Cells::cols;
         }
         static bool isFullyRevealed() {
-            return (rows * cols) - mineTotal == cellsRevealed;
+            return (Cells::rows * Cells::cols) - Cells::mineTotal == Cells::cellsRevealed;
         }
-
-    private:
-        static int rows, cols;
-        static int mineTotal;
-        static int cellsRevealed;
+        inline static int rows = 0, cols = 0;
+        inline static int mineTotal = 0;
+        inline static int cellsRevealed = 0;
 };
+
