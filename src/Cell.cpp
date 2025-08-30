@@ -1,19 +1,20 @@
+#include <string>
+
 class Cell 
 {
     public:
         Cell() {
-            this->isMine = false;
+            this->isMined = false;
             this->isFlagged = false;
-            this->isRevealed = false;
             this->adjacentMines = 0;
         }
-        void click() {
-
-        }
-        void flag() {
+        void mine() {
 
         }
         void chord() {
+
+        }
+        void flag() {
 
         }
         void addMine() {
@@ -22,8 +23,13 @@ class Cell
         void countAdjacentMines() {
             
         }
+        std::string getCellSymbol() {
+            if(isMined) return "[" + std::to_string(adjacentMines) + "]"; 
+            else if(isFlagged) return "[F]";
+            else return "[ ]";
+        }
         
     private:
-        bool isMine, isFlagged, isRevealed;
+        bool isMined, isFlagged;
         int adjacentMines;
 };
