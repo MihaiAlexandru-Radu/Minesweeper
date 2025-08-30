@@ -1,17 +1,26 @@
-#include "Cell.cpp"
-
 class Cells 
 {
     public:
-
-        Cells(int rows, int cols, int bombs) {
-            this->rows = rows;
-            this->cols = cols;
-            this->bombs = bombs;
+        static void setDimensions(int rows, int cols) {
+            Cells::rows = rows;
+            Cells::cols = cols;
+            Cells::cellsRevealed = 0;
+        }
+        static void setMineTotal(int mineTotal) {
+            Cells::mineTotal = mineTotal;
+        }
+        static int getRows() {
+            return rows; 
+        }
+        static int getCols() {
+            return cols;
+        }
+        static bool isFullyRevealed() {
+            return (rows * cols) - mineTotal == cellsRevealed;
         }
 
     private:
         static int rows, cols;
-        static int bombs;
-
+        static int mineTotal;
+        static int cellsRevealed;
 };
