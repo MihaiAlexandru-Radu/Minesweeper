@@ -8,6 +8,13 @@
 4) Write `g++ Main.cpp Cell.cpp -o minesweeper`
 5) Write `./minesweeper` to run program
 
+## Setting Up Minesweeper
+
+After writing `./minesweeper`, you will be prompted two times:
+
+1) `Enter board dimensions (rows x cols)> ` where the user must write the number of wanted rows and columns in the grid, each followed by a space (e.g. `4 4`).
+2) `Enter mine number> ` where the user must write the number of mines to occupy the grid (e.g. `5`).
+
 ## Playing Minesweeper
 
 When prompted with `>` write the **action name**, **action row**, and **action col** with a space between each element.
