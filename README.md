@@ -1,5 +1,7 @@
 # Minesweeper
 
+A very simplistic version of Minesweeper which can be run via a terminal.
+
 ## Installing Minesweeper
 
 1) Download ZIP of repository and extract file
