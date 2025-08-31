@@ -1,27 +1,27 @@
 #include <string>
 
+#include "Cell.h"
+
 class Cell 
 {
     public:
         Cell() {
+            this->isRevealed = false;
             this->isMined = false;
             this->isFlagged = false;
             this->adjacentMines = 0;
         }
-        void mine() {
-
-        }
-        void chord() {
-
+        void reveal() {
+            isRevealed = true;
         }
         void flag() {
-
+            isFlagged = !isFlagged;
         }
         void addMine() {
-            
+            isMined = true;
         }
-        void countAdjacentMines() {
-            
+        void setAdjacentMines(int adjacentMines) {
+            this->adjacentMines = adjacentMines;
         }
         std::string getCellSymbol() {
             if(isMined) return "[" + std::to_string(adjacentMines) + "]"; 
@@ -30,6 +30,6 @@ class Cell
         }
         
     private:
-        bool isMined, isFlagged;
+        bool isRevealed, isMined, isFlagged;
         int adjacentMines;
 };
