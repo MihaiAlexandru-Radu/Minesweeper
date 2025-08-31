@@ -1,4 +1,4 @@
-#ifndef CELL_H_INCLUDED
+#ifndef CELL_H
 #define CELL_H
 
 #include <string>
@@ -11,6 +11,7 @@ class Cell
         void flag();
         void addMine();
         void setAdjacentMines(int adjacentMines);
+        bool isMine();
         std::string getCellSymbol();
     
     private:
